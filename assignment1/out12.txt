@@ -1,50 +1,50 @@
 cross validation no: 1
-time taken for training in seconds: 0.014014
+time taken for training in seconds: 0.022787
              precision    recall  f1-score   support
 
-      nspam       0.99      1.00      0.99       241
-       spam       0.98      0.96      0.97        48
+      nspam       1.00      1.00      1.00       241
+       spam       0.98      0.98      0.98        48
 
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 2
-time taken for training in seconds: 0.013339
+time taken for training in seconds: 0.023666
              precision    recall  f1-score   support
 
-      nspam       1.00      0.99      0.99       241
-       spam       0.96      0.98      0.97        48
+      nspam       1.00      0.99      1.00       241
+       spam       0.96      1.00      0.98        48
 
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 3
-time taken for training in seconds: 0.013907
+time taken for training in seconds: 0.017910
              precision    recall  f1-score   support
 
-      nspam       1.00      0.99      0.99       241
-       spam       0.94      1.00      0.97        48
+      nspam       1.00      0.99      1.00       241
+       spam       0.96      1.00      0.98        48
 
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 4
-time taken for training in seconds: 0.015383
+time taken for training in seconds: 0.017597
              precision    recall  f1-score   support
 
       nspam       1.00      1.00      1.00       241
-       spam       1.00      0.98      0.99        48
+       spam       0.98      1.00      0.99        48
 
 avg / total       1.00      1.00      1.00       289
 
 cross validation no: 5
-time taken for training in seconds: 0.014327
+time taken for training in seconds: 0.019218
              precision    recall  f1-score   support
 
-      nspam       0.99      1.00      0.99       242
-       spam       1.00      0.94      0.97        48
+      nspam       1.00      1.00      1.00       242
+       spam       1.00      1.00      1.00        48
 
-avg / total       0.99      0.99      0.99       290
+avg / total       1.00      1.00      1.00       290
 
 cross validation no: 6
-time taken for training in seconds: 0.014006
+time taken for training in seconds: 0.013617
              precision    recall  f1-score   support
 
       nspam       1.00      1.00      1.00       241
@@ -53,34 +53,34 @@ time taken for training in seconds: 0.014006
 avg / total       1.00      1.00      1.00       289
 
 cross validation no: 7
-time taken for training in seconds: 0.013829
+time taken for training in seconds: 0.014262
              precision    recall  f1-score   support
 
-      nspam       1.00      0.98      0.99       241
-       spam       0.92      0.98      0.95        48
+      nspam       1.00      1.00      1.00       241
+       spam       1.00      0.98      0.99        48
 
-avg / total       0.98      0.98      0.98       289
+avg / total       1.00      1.00      1.00       289
 
 cross validation no: 8
-time taken for training in seconds: 0.014515
+time taken for training in seconds: 0.013777
              precision    recall  f1-score   support
 
-      nspam       1.00      0.98      0.99       241
-       spam       0.92      1.00      0.96        48
+      nspam       1.00      0.99      0.99       241
+       spam       0.94      1.00      0.97        48
 
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 9
-time taken for training in seconds: 0.013691
+time taken for training in seconds: 0.014401
              precision    recall  f1-score   support
 
       nspam       0.98      1.00      0.99       241
-       spam       1.00      0.88      0.93        48
+       spam       0.98      0.88      0.92        48
 
 avg / total       0.98      0.98      0.98       289
 
 cross validation no: 10
-time taken for training in seconds: 0.013480
+time taken for training in seconds: 0.014517
              precision    recall  f1-score   support
 
       nspam       0.99      1.00      0.99       242
@@ -89,8 +89,8 @@ time taken for training in seconds: 0.013480
 avg / total       0.99      0.99      0.99       291
 
 ('Total emails classified:', 2893)
-('Score:', 0.96756551424312609)
+('Score:', 0.97787096914015359)
 Confusion matrix:
-[[2398   14]
- [  17  464]]
+[[2402   10]
+ [  11  470]]
 (row=expected, col=predicted)

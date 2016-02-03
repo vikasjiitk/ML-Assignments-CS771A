@@ -1,5 +1,5 @@
 cross validation no: 1
-time taken for training in seconds: 0.014858
+time taken for training in seconds: 0.019129
              precision    recall  f1-score   support
 
       nspam       1.00      0.99      0.99       241
@@ -8,7 +8,7 @@ time taken for training in seconds: 0.014858
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 2
-time taken for training in seconds: 0.015674
+time taken for training in seconds: 0.018925
              precision    recall  f1-score   support
 
       nspam       1.00      0.98      0.99       241
@@ -17,7 +17,7 @@ time taken for training in seconds: 0.015674
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 3
-time taken for training in seconds: 0.014873
+time taken for training in seconds: 0.018915
              precision    recall  f1-score   support
 
       nspam       1.00      0.99      1.00       241
@@ -26,7 +26,7 @@ time taken for training in seconds: 0.014873
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 4
-time taken for training in seconds: 0.016041
+time taken for training in seconds: 0.020459
              precision    recall  f1-score   support
 
       nspam       1.00      0.99      1.00       241
@@ -35,7 +35,7 @@ time taken for training in seconds: 0.016041
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 5
-time taken for training in seconds: 0.015787
+time taken for training in seconds: 0.018829
              precision    recall  f1-score   support
 
       nspam       1.00      1.00      1.00       242
@@ -44,7 +44,7 @@ time taken for training in seconds: 0.015787
 avg / total       1.00      1.00      1.00       290
 
 cross validation no: 6
-time taken for training in seconds: 0.015986
+time taken for training in seconds: 0.018919
              precision    recall  f1-score   support
 
       nspam       1.00      1.00      1.00       241
@@ -53,7 +53,7 @@ time taken for training in seconds: 0.015986
 avg / total       1.00      1.00      1.00       289
 
 cross validation no: 7
-time taken for training in seconds: 0.014832
+time taken for training in seconds: 0.019593
              precision    recall  f1-score   support
 
       nspam       1.00      1.00      1.00       241
@@ -62,7 +62,7 @@ time taken for training in seconds: 0.014832
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 8
-time taken for training in seconds: 0.014915
+time taken for training in seconds: 0.019886
              precision    recall  f1-score   support
 
       nspam       1.00      0.98      0.99       241
@@ -71,7 +71,7 @@ time taken for training in seconds: 0.014915
 avg / total       0.98      0.98      0.98       289
 
 cross validation no: 9
-time taken for training in seconds: 0.014364
+time taken for training in seconds: 0.019446
              precision    recall  f1-score   support
 
       nspam       1.00      1.00      1.00       241
@@ -80,7 +80,7 @@ time taken for training in seconds: 0.014364
 avg / total       0.99      0.99      0.99       289
 
 cross validation no: 10
-time taken for training in seconds: 0.014452
+time taken for training in seconds: 0.019261
              precision    recall  f1-score   support
 
       nspam       0.99      1.00      0.99       242

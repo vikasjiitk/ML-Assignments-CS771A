@@ -42,15 +42,12 @@ for i in range(1,k_fold+1):
                     if line != '\n':
                         msg = msg + line[:-1] + ' '
 
-        # question 1 - part b (removing fluff words) uncomment to run it
-
                 filtered_msg = ''
                 for word in msg.split():
                     if (word not in stop):
                         filtered_msg = filtered_msg + word + ' '
                 msg = filtered_msg
 
-        # question 1 - part c (lemetizing) uncomment to run it
                 lemmatized_msg = split_into_lemmas(msg)
                 msg = ' '.join(lemmatized_msg)
 
@@ -89,7 +86,18 @@ for i in range(1,k_fold+1):
         for line in f:
             if line != '\n':
                 msg = msg + line[:-1] + ' '
+
+        filtered_msg = ''
+        for word in msg.split():
+            if (word not in stop):
+                filtered_msg = filtered_msg + word + ' '
+        msg = filtered_msg
+
+        lemmatized_msg = split_into_lemmas(msg)
+        msg = ' '.join(lemmatized_msg)
+
         ts_Dict['message'].append(msg)
+
     ts_messages = pandas.DataFrame(ts_Dict)
 
     #converting to numeric form
