@@ -103,3 +103,59 @@ Confusion matrix:
 [[2391   21]
  [  20  461]]
 row=expected, col=predicted
+
+
+USING STOPWORDS AND LEMMATIZING
+
+
+cross validation no:  1
+time taken for training in seconds:  0.10695838928222656
+             precision    recall  f1-score   support
+
+      nspam       1.00      1.00      1.00       482
+       spam       0.99      0.98      0.98        96
+
+avg / total       0.99      0.99      0.99       578
+
+cross validation no:  2
+time taken for training in seconds:  0.08349823951721191
+             precision    recall  f1-score   support
+
+      nspam       1.00      1.00      1.00       482
+       spam       0.98      0.98      0.98        96
+
+avg / total       0.99      0.99      0.99       578
+
+cross validation no:  3
+time taken for training in seconds:  0.12401652336120605
+             precision    recall  f1-score   support
+
+      nspam       1.00      0.99      0.99       483
+       spam       0.95      0.98      0.96        96
+
+avg / total       0.99      0.99      0.99       579
+
+cross validation no:  4
+time taken for training in seconds:  0.10236549377441406
+             precision    recall  f1-score   support
+
+      nspam       0.99      0.99      0.99       482
+       spam       0.97      0.96      0.96        96
+
+avg / total       0.99      0.99      0.99       578
+
+cross validation no:  5
+time taken for training in seconds:  0.051886558532714844
+             precision    recall  f1-score   support
+
+      nspam       0.99      0.99      0.99       483
+       spam       0.96      0.97      0.96        97
+
+avg / total       0.99      0.99      0.99       580
+
+Total emails classified: 2893
+Score: 0.971003154786
+Confusion matrix:
+[[2397   15]
+ [  13  468]]
+row=expected, col=predicted

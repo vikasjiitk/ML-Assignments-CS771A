@@ -59,8 +59,8 @@ for i in range(1,k_fold+1):
     count_vectorizer = CountVectorizer()
     tr_counts = count_vectorizer.fit_transform(tr_messages['message'].values)
 
-    clf = svm.SVC(kernel='linear')           ### For Standard Formulation
-    # clf = svm.LinearSVC(loss='hinge')        ### For Hinge-loss Formulation
+    # clf = svm.SVC(kernel='linear')           ### For Standard Formulation
+    clf = svm.LinearSVC(loss='hinge')        ### For Hinge-loss Formulation
 
     tr_targets = tr_messages['label'].values
 
