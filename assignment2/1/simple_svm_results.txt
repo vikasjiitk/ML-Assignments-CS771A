@@ -1,3 +1,6 @@
+USING WORDS AS IT IS
+=======================================================
+
 cross validation no:  1
 time taken for training in seconds:  0.6437852382659912
              precision    recall  f1-score   support
@@ -51,6 +54,7 @@ Confusion matrix:
 row=expected, col=predicted
 
 USING STOPWORDS
+=========================================================
 
 cross validation no:  1
 time taken for training in seconds:  0.7457993030548096
@@ -105,6 +109,7 @@ Confusion matrix:
 row=expected, col=predicted
 
 USING STOPWORDS AND LEMMATIZING
+==========================================================
 
 cross validation no:  1
 time taken for training in seconds:  0.7130222320556641

@@ -8,15 +8,27 @@ def most_common(lst):
 
 def most_pred(all_predictions):
     pred = []
+    rand = 0
     for i in range(len(all_predictions)):
-        pred.append(most_common(all_predictions[i]))
-
+        l = all_predictions[i]
+        if (l[0] != l[1]):
+            if(l[1] != l[2]):
+                if(l[2] != l[0]):
+                    rand += 1
+                    pred.append(most_common(all_predictions[i]))
+                else:
+                    pred.append(most_common(all_predictions[i]))
+            else:
+                pred.append(most_common(all_predictions[i]))
+        else:
+            pred.append(most_common(all_predictions[i]))
+    print (rand)
     return pred
 
 data = pd.read_csv('../assgnData/connect-4.csv', sep=',',header=None)
 
-no_vec = len(data)
-# no_vec = 5000
+#no_vec = len(data)
+no_vec = 500
 
 k_fold = 5
 confusion = numpy.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
