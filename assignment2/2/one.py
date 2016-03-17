@@ -1,8 +1,10 @@
 import pandas as pd
 from sklearn import svm
+from random import randint
 import numpy
 from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
 #comment
+true_labels = []
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
@@ -15,7 +17,8 @@ def most_pred(all_predictions):
             if(l[1] != l[2]):
                 if(l[2] != l[0]):
                     rand += 1
-                    pred.append(most_common(all_predictions[i]))
+                    # print (true_labels[i])
+                    pred.append(randint(-1,1))
                 else:
                     pred.append(most_common(all_predictions[i]))
             else:

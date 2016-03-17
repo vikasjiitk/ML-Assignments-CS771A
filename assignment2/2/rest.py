@@ -1,26 +1,61 @@
 import pandas as pd
 from sklearn import svm
-from random import randint
 import numpy
+from random import randint
 from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
-
+true_labels = []
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
+# def most_pred(all_predictions):
+#     pred = []
+#     for i in range(len(all_predictions)):
+#         # ele = most_common(all_predictions[i])
+#         ele = all_predictions[i].index(min(all_predictions[i]))
+#         # if (ele == 2):
+#         #     ele = randint(-1,1)
+#         pred.append(ele-1)
+#     return pred
+
 def most_pred(all_predictions):
     pred = []
+    rand = 0
     for i in range(len(all_predictions)):
-        # ele = most_common(all_predictions[i])
-        ele = all_predictions[i].index(min(all_predictions[i]))
-        # if (ele == 2):
-        #     ele = randint(-1,1)
-        pred.append(ele-1)
+        l = all_predictions[i]
+        if 2 in l:
+            l.remove(2)
+        if 3 in l:
+            l.remove(3)
+        if 4 in l:
+            l.remove(4)
+        # print (l)
+        if not l:
+            pred.append(randint(-1,1))
+        else:
+            if (len(l)==1):
+                pred.append(l[0])
+            elif (len(l)==2):
+                pred.append(l[0])
+            elif(len(l)==3):
+                if (l[0] != l[1]):
+                    if(l[1] != l[2]):
+                        if(l[2] != l[0]):
+                            rand += 1
+                            pred.append(most_common(l))
+                            # print(true_labels[i],pred[i])
+                        else:
+                            pred.append(most_common(l))
+                    else:
+                        pred.append(most_common(l))
+                else:
+                    pred.append(most_common(l))
+    print (rand)
     return pred
 
 data = pd.read_csv('../assgnData/connect-4.csv', sep=',',header=None)
 
 # no_vec = len(data)
-no_vec = 1000
+no_vec = 500
 
 k_fold = 5
 confusion = numpy.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
@@ -89,29 +124,40 @@ for i in range(k_fold):
     clf1.fit(tr_dataw + tr_datal + tr_datad, tr_lw + tr_lrest)
 
     clf2 = svm.SVC(kernel='linear') # Loss
-    tr_lrest = [2 for j in range(len(tr_lw+tr_ld))]
+    tr_lrest = [3 for j in range(len(tr_lw+tr_ld))]
     clf2.fit(tr_datal + tr_dataw + tr_datad, tr_ll + tr_lrest)
 
     clf3 = svm.SVC(kernel='linear') # Draw
-    tr_lrest = [2 for j in range(len(tr_ll+tr_lw))]
+    tr_lrest = [4 for j in range(len(tr_ll+tr_lw))]
     clf3.fit(tr_datad + tr_datal + tr_dataw, tr_ld + tr_lrest)
 
     true_labels = ts_lw + ts_ll + ts_ld
     all_predictions = [[0,0,0] for j in range(ti,tf)]
 
-    # pred1 = clf1.predict(ts_dataw + ts_datal + ts_datad)
-    pred1 = clf1.decision_function(ts_dataw + ts_datal + ts_datad)
+    pred1c = clf1.predict(ts_dataw + ts_datal + ts_datad)
+    # print (pred1c)
+    # pred1 = clf1.decision_function(ts_dataw + ts_datal + ts_datad)
+    # for j in range(len(pred1c)):
+    #     print(pred1[j],pred1c[j])
     # print (d)
     for j in range(0,tf-ti):
-        all_predictions[j][2] = pred1[j]
+        all_predictions[j][2] = pred1c[j]
 
-    pred2 = clf2.decision_function(ts_dataw + ts_datal + ts_datad)
+    pred2c = clf2.predict(ts_dataw + ts_datal + ts_datad)
+    # print (pred2c)
+    # pred2 = clf2.decision_function(ts_dataw + ts_datal + ts_datad)
+    # for j in range(len(pred2c)):
+    #     print(pred2[j],pred2c[j])
     for j in range(0,tf-ti):
-        all_predictions[j][0] = pred2[j]
+        all_predictions[j][0] = pred2c[j]
 
-    pred3 = clf3.decision_function(ts_dataw + ts_datal + ts_datad)
+    pred3c = clf3.predict(ts_dataw + ts_datal + ts_datad)
+    # print (pred3c)
+    # pred3 = clf3.decision_function(ts_dataw + ts_datal + ts_datad)
+    # for j in range(len(pred3c)):
+    #     print(pred3[j],pred3c[j])
     for j in range(0,tf-ti):
-        all_predictions[j][1] = pred3[j]
+        all_predictions[j][1] = pred3c[j]
 
     final_pred = most_pred(all_predictions)
     # print (all_predictions)
