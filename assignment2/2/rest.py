@@ -7,19 +7,10 @@ true_labels = []
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
-# def most_pred(all_predictions):
-#     pred = []
-#     for i in range(len(all_predictions)):
-#         # ele = most_common(all_predictions[i])
-#         ele = all_predictions[i].index(min(all_predictions[i]))
-#         # if (ele == 2):
-#         #     ele = randint(-1,1)
-#         pred.append(ele-1)
-#     return pred
-
 def most_pred(all_predictions):
     pred = []
     rand = 0
+    ran = 0
     for i in range(len(all_predictions)):
         l = all_predictions[i]
         if 2 in l:
@@ -30,7 +21,8 @@ def most_pred(all_predictions):
             l.remove(4)
         # print (l)
         if not l:
-            pred.append(1)
+            pred.append((ran%3)-1)
+            ran += 1
         else:
             if (len(l)==1):
                 pred.append(l[0])
@@ -49,13 +41,13 @@ def most_pred(all_predictions):
                         pred.append(most_common(l))
                 else:
                     pred.append(most_common(l))
-    print (rand)
+#    print (rand)
     return pred
 
 data = pd.read_csv('../assgnData/connect-4.csv', sep=',',header=None)
 
-# no_vec = len(data)
-no_vec = 500
+no_vec = len(data)
+#no_vec = 500
 
 k_fold = 5
 confusion = numpy.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
@@ -135,27 +127,14 @@ for i in range(k_fold):
     all_predictions = [[0,0,0] for j in range(ti,tf)]
 
     pred1c = clf1.predict(ts_dataw + ts_datal + ts_datad)
-    # print (pred1c)
-    # pred1 = clf1.decision_function(ts_dataw + ts_datal + ts_datad)
-    # for j in range(len(pred1c)):
-    #     print(pred1[j],pred1c[j])
-    # print (d)
     for j in range(0,tf-ti):
         all_predictions[j][2] = pred1c[j]
 
     pred2c = clf2.predict(ts_dataw + ts_datal + ts_datad)
-    # print (pred2c)
-    # pred2 = clf2.decision_function(ts_dataw + ts_datal + ts_datad)
-    # for j in range(len(pred2c)):
-    #     print(pred2[j],pred2c[j])
     for j in range(0,tf-ti):
         all_predictions[j][0] = pred2c[j]
 
     pred3c = clf3.predict(ts_dataw + ts_datal + ts_datad)
-    # print (pred3c)
-    # pred3 = clf3.decision_function(ts_dataw + ts_datal + ts_datad)
-    # for j in range(len(pred3c)):
-    #     print(pred3[j],pred3c[j])
     for j in range(0,tf-ti):
         all_predictions[j][1] = pred3c[j]
 

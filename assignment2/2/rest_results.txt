@@ -1,0 +1,47 @@
+             precision    recall  f1-score   support
+
+         -1       0.66      0.42      0.51      2753
+          0       0.17      0.03      0.05      1034
+          1       0.79      0.94      0.86      9724
+
+avg / total       0.71      0.76      0.73     13511
+
+             precision    recall  f1-score   support
+
+         -1       0.71      0.66      0.69      3053
+          0       0.20      0.08      0.12      1063
+          1       0.85      0.92      0.88      9395
+
+avg / total       0.77      0.80      0.78     13511
+
+             precision    recall  f1-score   support
+
+         -1       0.61      0.63      0.62      3789
+          0       0.19      0.09      0.12      1359
+          1       0.77      0.83      0.80      8364
+
+avg / total       0.67      0.70      0.68     13512
+
+             precision    recall  f1-score   support
+
+         -1       0.63      0.59      0.61      3099
+          0       0.20      0.09      0.12      1254
+          1       0.81      0.89      0.85      9158
+
+avg / total       0.71      0.75      0.73     13511
+
+             precision    recall  f1-score   support
+
+         -1       0.67      0.45      0.54      3941
+          0       0.20      0.07      0.10      1739
+          1       0.69      0.91      0.78      7832
+
+avg / total       0.62      0.67      0.63     13512
+
+Confusion matrix:
+[[ 9133   979  6523]
+ [ 1331   475  4643]
+ [ 3494   970 40009]]
+row=expected, col=predicted
+
+

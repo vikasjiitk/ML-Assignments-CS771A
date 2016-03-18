@@ -3,7 +3,7 @@ from sklearn import svm
 from random import randint
 import numpy
 from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
-#comment
+
 true_labels = []
 def most_common(lst):
     return max(set(lst), key=lst.count)
@@ -25,13 +25,13 @@ def most_pred(all_predictions):
                 pred.append(most_common(all_predictions[i]))
         else:
             pred.append(most_common(all_predictions[i]))
-    print (rand)
+#    print (rand)
     return pred
 
 data = pd.read_csv('../assgnData/connect-4.csv', sep=',',header=None)
 
-#no_vec = len(data)
-no_vec = 500
+no_vec = len(data)
+# no_vec = 500
 
 k_fold = 5
 confusion = numpy.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
