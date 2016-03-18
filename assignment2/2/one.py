@@ -18,7 +18,7 @@ def most_pred(all_predictions):
                 if(l[2] != l[0]):
                     rand += 1
                     # print (true_labels[i])
-                    pred.append(randint(-1,1))
+                    pred.append(most_common(all_predictions[i]))
                 else:
                     pred.append(most_common(all_predictions[i]))
             else:

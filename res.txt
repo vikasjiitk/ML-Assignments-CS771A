@@ -1,0 +1,104 @@
+67557
+hhh^?^?^?hhh^?^?^?^?^?^?^?^?^?^?^?hhfgghh36
+             precision    recall  f1-score   support
+
+         -1       0.67      0.40      0.50      2753
+          0       0.17      0.01      0.02      1034
+          1       0.78      0.95      0.86      9724
+
+avg / total       0.71      0.77      0.72     13511
+
+0
+/usr/local/lib/python2.7/dist-packages/scikit_learn-0.17.1-py2.7-linux-x86_64.egg/sklearn/metrics/classification.py:1074: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+             precision    recall  f1-score   support
+
+         -1       0.73      0.68      0.71      3053
+          0       0.00      0.00      0.00      1063
+          1       0.83      0.94      0.89      9395
+
+avg / total       0.74      0.81      0.78     13511
+
+23
+             precision    recall  f1-score   support
+
+         -1       0.61      0.65      0.63      3789
+          0       0.18      0.01      0.02      1359
+          1       0.76      0.85      0.80      8364
+
+avg / total       0.66      0.71      0.67     13512
+
+17
+             precision    recall  f1-score   support
+
+         -1       0.63      0.62      0.63      3099
+          0       0.24      0.01      0.01      1254
+          1       0.80      0.91      0.85      9158
+
+avg / total       0.71      0.76      0.72     13511
+
+67
+             precision    recall  f1-score   support
+
+         -1       0.68      0.48      0.56      3941
+          0       0.21      0.01      0.02      1739
+          1       0.68      0.93      0.79      7832
+
+avg / total       0.62      0.68      0.62     13512
+
+Confusion matrix:
+[[ 9495    82  7058]
+ [ 1414    47  4988]
+ [ 3530   115 40828]]
+row=expected, col=predicted
+0
+             precision    recall  f1-score   support
+
+         -1       0.66      0.42      0.51      2753
+          0       0.17      0.03      0.05      1034
+          1       0.79      0.94      0.86      9724
+
+avg / total       0.72      0.76      0.73     13511
+
+0
+             precision    recall  f1-score   support
+
+         -1       0.72      0.67      0.69      3053
+          0       0.22      0.09      0.13      1063
+          1       0.85      0.92      0.89      9395
+
+avg / total       0.77      0.80      0.78     13511
+
+0
+             precision    recall  f1-score   support
+
+         -1       0.61      0.63      0.62      3789
+          0       0.20      0.10      0.13      1359
+          1       0.77      0.83      0.80      8364
+
+avg / total       0.67      0.70      0.68     13512
+
+0
+             precision    recall  f1-score   support
+
+         -1       0.63      0.58      0.60      3099
+          0       0.20      0.09      0.13      1254
+          1       0.81      0.89      0.85      9158
+
+avg / total       0.71      0.75      0.73     13511
+
+0
+             precision    recall  f1-score   support
+
+         -1       0.67      0.45      0.54      3941
+          0       0.22      0.08      0.12      1739
+          1       0.69      0.91      0.79      7832
+
+avg / total       0.63      0.67      0.63     13512
+
+Confusion matrix:
+[[ 9127  1013  6495]
+ [ 1335   512  4602]
+ [ 3487   975 40011]]
+row=expected, col=predicted
+

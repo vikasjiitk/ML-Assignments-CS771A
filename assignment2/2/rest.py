@@ -30,7 +30,7 @@ def most_pred(all_predictions):
             l.remove(4)
         # print (l)
         if not l:
-            pred.append(randint(-1,1))
+            pred.append(1)
         else:
             if (len(l)==1):
                 pred.append(l[0])
