@@ -52,19 +52,19 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 print ('RandomForestClassifier')
 
-K = 200
-acc_RF = 0
-confusion = np.zeros((10,10))
-for i in range(1,K):
-    clf = RandomForestClassifier(max_depth=6, n_estimators=i)
-    clf.fit(tr_hog,tr_label)
-    val_p = clf.predict(val_hog)
-    confusion = confusion_matrix(val_label, val_p)
-    print (i,confusion.trace())
-    if(confusion.trace() > acc_RF):
-        n_RF = i
-        acc_RF = confusion.trace()
-print (n_RF, acc_RF)
+# K = 200
+# acc_RF = 0
+# confusion = np.zeros((10,10))
+# for i in range(1,K):
+#     clf = RandomForestClassifier(max_depth=6, n_estimators=i)
+#     clf.fit(tr_hog,tr_label)
+#     val_p = clf.predict(val_hog)
+#     confusion = confusion_matrix(val_label, val_p)
+#     print (i,confusion.trace())
+#     if(confusion.trace() > acc_RF):
+#         n_RF = i
+#         acc_RF = confusion.trace()
+# print (n_RF, acc_RF)
 
 #ADABOOST
 from sklearn.ensemble import AdaBoostClassifier

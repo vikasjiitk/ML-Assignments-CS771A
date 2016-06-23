@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn import svm
 from random import randint
 import numpy
+from tqdm import tqdm
 from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
 
 true_labels = []
@@ -38,14 +39,13 @@ confusion = numpy.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
 
 dt = [[0 for j in range(42*3)] for i in range(no_vec)]
 dt_label = [0 for i in range(no_vec)]
-for i in range(no_vec):
+for i in tqdm(range(no_vec)):
     if(data.loc[i,42]=='win'):
         dt_label[i] = 1
     elif(data.loc[i,42]=='loss'):
         dt_label[i] = -1
     elif(data.loc[i,42]=='draw'):
         dt_label[i] = 0
-
     for j in range(42):
         if(data.loc[i,j]=='o'):
             dt[i][3*j] = 1
@@ -91,34 +91,23 @@ for i in range(k_fold):
             elif(dt_label[j]==0):
                 tr_datad.append(dt[j])
                 tr_ld.append(0)
-    # print (tr_lw)
-    # print (tr_ll)
-    # print (tr_ld)
-
     clf1 = svm.SVC(kernel='linear') # Win-Loss
     clf1.fit(tr_dataw + tr_datal, tr_lw + tr_ll)
-
     clf2 = svm.SVC(kernel='linear') # Win-Draw
     clf2.fit(tr_dataw + tr_datad, tr_lw + tr_ld)
-
     clf3 = svm.SVC(kernel='linear') # Draw-Loss
     clf3.fit(tr_datad + tr_datal, tr_ld + tr_ll)
-
     true_labels = ts_lw + ts_ll + ts_ld
     all_predictions = [[0,0,0] for j in range(ti,tf)]
-
     pred1 = clf1.predict(ts_dataw + ts_datal + ts_datad)
     for j in range(0,tf-ti):
         all_predictions[j][0] = pred1[j]
-
     pred2 = clf2.predict(ts_dataw + ts_datal + ts_datad)
     for j in range(0,tf-ti):
         all_predictions[j][1] = pred2[j]
-
     pred3 = clf3.predict(ts_dataw + ts_datal + ts_datad)
     for j in range(0,tf-ti):
         all_predictions[j][2] = pred3[j]
-
     final_pred = most_pred(all_predictions)
     # print (all_predictions)
     print (classification_report(true_labels, final_pred))

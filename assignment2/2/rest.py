@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn import svm
 import numpy
 from random import randint
+from tqdm import tqdm
 from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
 true_labels = []
 def most_common(lst):
@@ -54,7 +55,7 @@ confusion = numpy.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
 
 dt = [[0 for j in range(42*3)] for i in range(no_vec)]
 dt_label = [0 for i in range(no_vec)]
-for i in range(no_vec):
+for i in tqdm(range(no_vec)):
     if(data.loc[i,42]=='win'):
         dt_label[i] = 1
     elif(data.loc[i,42]=='loss'):
@@ -86,7 +87,7 @@ for i in range(k_fold):
     tr_lw = []
     tr_ll = []
     tr_ld = []
-    for j in range(no_vec):
+    for j in tqdm(range(no_vec)):
         if(j>=ti and j<tf):
             if(dt_label[j]==1):
                 ts_dataw.append(dt[j])
